@@ -1,0 +1,50 @@
+.modal {
+  position: fixed;
+  z-index: 100;
+  background-color: white;
+  box-shadow: 0 0 10px black;
+  width: 700px;
+  height: auto;
+  max-height: 550px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  padding: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 200ms ease;
+  overflow-y: scroll;
+  @media (width <= 768px) {
+    width: 95%;
+    padding: 15px;
+    @media (width <= 480px) {
+      min-height: 200px;
+      padding: 10px;
+    }
+  }
+}
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+.backdrop {
+  position: fixed;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.445);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 200ms ease;
+}
+.backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+.close {
+  cursor: pointer;
+  padding: 10px;
+}
