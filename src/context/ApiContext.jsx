@@ -70,7 +70,7 @@ const ContextProvider = ({ children }) => {
     }
   };
 
-  // GET TaskListById (project)
+  // GET ProjectListById (project)
   const getProjectListById = async (id) => {
     console.log(id);
     setLoading(true);
@@ -89,10 +89,6 @@ const ContextProvider = ({ children }) => {
     console.log(projectId, taskId);
 
     try {
-      // دریافت پروژه به‌صورت کامل
-      // const projectResponse = await httpService.get(`/projects/${projectId}`);
-      // const project = projectResponse.data;
-
       // حذف تسک مورد نظر از آرایه `tasks`
       const updatedTasks = detailsTask.tasks.filter(
         (task) => task.id !== taskId
@@ -110,7 +106,7 @@ const ContextProvider = ({ children }) => {
       );
 
       if (response.status === 200) {
-        // بروزرسانی حالت محلی
+        // بروزرسانی  نمایش
         setDetailsTask((prevDetails) => ({
           ...prevDetails,
           tasks: updatedTasks,
@@ -130,7 +126,7 @@ const ContextProvider = ({ children }) => {
         id: crypto.randomUUID(),
       };
 
-      // به آرایه tasks پروژه، تسک جدید را اضافه کنید
+      // اگر task وجود نداشت یک آرایه خالی بگذار
       const updatedTasks = [...(detailsTask.tasks || []), newTask];
       const updatedProject = { ...detailsTask, tasks: updatedTasks };
 
@@ -143,7 +139,7 @@ const ContextProvider = ({ children }) => {
       if (response.status === 200) {
         toast.success("تسک با موفقیت ایجاد شد");
 
-        // بروزرسانی وضعیت محلی برای نمایش تغییرات در رابط کاربری
+        // بروزرسانی وضعیت  برای نمایش    
         setDetailsTask((prevDetails) => ({
           ...prevDetails,
           tasks: updatedTasks,
@@ -158,7 +154,7 @@ const ContextProvider = ({ children }) => {
   // STATUS
   const updateTaskStatus = async (projectId, taskId, newStatus) => {
     try {
-      // به‌روزرسانی وضعیت تسک در آرایه `tasks`
+      // به‌روزرسانی وضعیت تسک در آرایه 
       const updatedTasks = detailsTask.tasks.map((task) =>
         task.id === taskId ? { ...task, status: newStatus } : task
       );
@@ -171,7 +167,7 @@ const ContextProvider = ({ children }) => {
       );
 
       if (response.status === 200) {
-        // بروزرسانی وضعیت محلی برای نمایش تغییرات در رابط کاربری
+        // بروزرسانی وضعیت  برای نمایش 
         setDetailsTask((prevDetails) => ({
           ...prevDetails,
           tasks: updatedTasks,

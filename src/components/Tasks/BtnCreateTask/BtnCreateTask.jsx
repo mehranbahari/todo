@@ -3,6 +3,7 @@ import Modal from "../../../shared/Modal/Modal";
 import styles from "./BtnCreateTask.module.css";
 import { FaPlus } from "react-icons/fa";
 import CreateTask from "../CreateTask/CreateTask";
+import Button from "../../../shared/Button/Button";
 
 const BtnCreateTask = () => {
   const [isShow, setIsShow] = useState(false);
@@ -12,10 +13,10 @@ const BtnCreateTask = () => {
 
   return (
     <div className={styles.WrapperbtnCreateTask}>
-      <button onClick={() => setIsShow(true)} className={styles.btnCreateTask}>
+      <Button onClick={() => setIsShow(true)}>
         Create Task
         <FaPlus size={24} />
-      </button>
+      </Button>
 
       <Modal status={isShow} setStatus={setIsShow}>
         <CreateTask />

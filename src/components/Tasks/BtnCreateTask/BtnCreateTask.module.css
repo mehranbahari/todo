@@ -1,28 +1,6 @@
 .WrapperbtnCreateTask {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 25px 0;
-  }
-  .btnCreateTask {
-    border: none;
-    border: 1px solid #ccc;
-    background: #9858fd;
-    padding: 12px 30px;
-    color: #fff;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 10px;
-    transition: 0.5s all;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-  }
-  .btnCreateTask:hover {
-    background-color: #fff;
-    color: #000;
-    border-color: #9858fd;
-  }
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 25px 0;
+}

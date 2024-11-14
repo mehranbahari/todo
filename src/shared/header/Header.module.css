@@ -25,6 +25,9 @@
   margin-left: 10px;
   cursor: pointer;
 }
+.navItem > a {
+  color: #fff;
+}
 
 .navItem:last-child {
   margin-right: 0;

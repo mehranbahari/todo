@@ -71,25 +71,3 @@ label {
   display: flex;
   justify-content: center;
 }
-
-.submitButton {
-  padding: 10px 30px;
-  background-color: #9858fd;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: 0.5s all;
-  transition: background-color 0.3s;
-  @media (width <= 768px) {
-    font-size: 1.25rem;
-    @media (width <= 480px) {
-      font-size: 0.9rem;
-    }
-  }
-}
-
-.submitButton:hover {
-  background-color: #1d0346;
-}

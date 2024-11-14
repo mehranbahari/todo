@@ -5,6 +5,7 @@ import Card from "../../../shared/card/Card";
 import { CreateTaskVal } from "../../../validations/CreateTask";
 import { useAppContext } from "../../../context/ApiContext";
 import { useParams } from "react-router-dom";
+import Button from "../../../shared/Button/Button";
 
 const CreateTask = () => {
   const {
@@ -23,6 +24,7 @@ const CreateTask = () => {
   const submitHandle = (data) => {
     console.log("Form Data:", data);
     createTaskSend(id, data);
+    reset();
   };
 
   // Log errors if any
@@ -122,9 +124,7 @@ const CreateTask = () => {
           </div>
 
           <div className={styles.buttonWrapper}>
-            <button type="submit" className={styles.submitButton}>
-              Save
-            </button>
+            <Button type="submit">Save</Button>
           </div>
         </form>
       </div>

@@ -6,12 +6,12 @@ const Header = () => {
     <header className={styles.header}>
       <nav className={`${styles.nav} container`}>
         <ul className={styles.navList}>
-          <Link to="">
-            <li className={styles.navItem}>All List</li>
-          </Link>
-          <Link to="">
-            <li className={styles.navItem}>Logs</li>
-          </Link>
+          <li className={styles.navItem}>
+            <Link to="/">Home</Link>
+          </li>
+          <li className={styles.navItem}>
+            <Link to="">About Project</Link>
+          </li>
         </ul>
       </nav>
     </header>
