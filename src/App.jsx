@@ -4,7 +4,6 @@ import Footer from "./shared/footer/Footer";
 import NotFound from "./shared/NotFound/NotFound";
 import ProjectList from "./components/logs/ProjectList/ProjectList";
 import DetailsProject from "./components/logs/Details-project/Details-Project";
-import CreateTask from "./components/Tasks/CreateTask/CreateTask";
 
 const App = () => {
   return (
@@ -15,7 +14,6 @@ const App = () => {
           <Routes>
             <Route path="/" element={<ProjectList />} />
             <Route path="/details-project/:id" element={<DetailsProject />} />
-            <Route path="/create-task" element={<CreateTask />} />
             <Route path="/*" element={<NotFound />} />
           </Routes>
         </div>

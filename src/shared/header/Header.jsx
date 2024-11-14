@@ -9,9 +9,9 @@ const Header = () => {
           <li className={styles.navItem}>
             <Link to="/">Home</Link>
           </li>
-          <li className={styles.navItem}>
+          {/* <li className={styles.navItem}>
             <Link to="">About Project</Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </header>

@@ -21,7 +21,10 @@ html {
 *:not(i) {
   font-family: "vazir", sans-serif !important;
 }
-
+::placeholder {
+  padding: 0 5px;
+  font-size: 13px;
+}
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -32,4 +35,12 @@ li {
 }
 a {
   text-decoration: none;
+}
+/* style  calender */
+.rmdp-container {
+  width: 100%;
+}
+.rmdp-input {
+  height: 36px !important;
+  width: 100% !important;
 }

@@ -42,6 +42,7 @@ const CreateTask = () => {
           <div className={styles.logWrapper}>
             <label htmlFor="name">نام تسک:</label>
             <input
+              placeholder="نام تسک را وارد کنید"
               {...register("name")}
               autoComplete="off"
               id="name"
@@ -58,6 +59,7 @@ const CreateTask = () => {
           <div className={styles.logWrapper}>
             <label htmlFor="description">موضوع تسک:</label>
             <input
+              placeholder="موضوع تسک را وارد کنید"
               {...register("description")}
               autoComplete="off"
               id="description"
@@ -73,15 +75,15 @@ const CreateTask = () => {
             )}
           </div>
 
+          <label htmlFor="dueDate">زمان تسک:</label>
           <div className={styles.logWrapper}>
-            <label htmlFor="dueDate">زمان تسک:</label>
-
             <Controller
               control={control}
               name="dueDate"
               render={({ field: { onChange, value } }) => (
                 <>
                   <DatePicker
+                    placeholder="تاریخ تسک را وارد کنید"
                     value={value || ""}
                     onChange={(date) => {
                       const formattedDate = date?.format("YYYY/MM/DD");
@@ -104,27 +106,19 @@ const CreateTask = () => {
             <label>وضعیت تسک:</label>
             <div className={styles.radioBtn}>
               <label>
-                <input
-                  type="radio"
-                  value="done"
-                  {...register("status")} // Registering the radio buttons
-                />
+                <input type="radio" value="done" {...register("status")} />
                 Done
               </label>
               <label>
                 <input
                   type="radio"
                   value="in-progress"
-                  {...register("status")} // Registering the radio buttons
+                  {...register("status")}
                 />
                 In Progress
               </label>
               <label>
-                <input
-                  type="radio"
-                  value="toDo"
-                  {...register("status")} // Registering the radio buttons
-                />
+                <input type="radio" value="toDo" {...register("status")} />
                 To Do
               </label>
             </div>
