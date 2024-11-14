@@ -4,14 +4,13 @@ import { useAppContext } from "../../../context/ApiContext";
 import Spiner from "../../../shared/Spiner/Spiner";
 import styles from "./Details-Project.module.css";
 import Card from "../../../shared/card/Card";
-import { FaPen, FaPlus, FaTrash } from "react-icons/fa";
+import { FaTrash } from "react-icons/fa";
 import BtnCreateTask from "../../Tasks/BtnCreateTask/BtnCreateTask";
 import Button from "../../../shared/Button/Button";
 import Modal from "../../../shared/Modal/Modal";
 
 const DetailsProject = () => {
   const { id } = useParams();
-  console.log(id);
   const {
     loading,
     getProjectListById,
@@ -46,7 +45,7 @@ const DetailsProject = () => {
   };
 
   return (
-    <div >
+    <div>
       {loading ? (
         <Spiner />
       ) : (

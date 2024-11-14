@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import styles from "./CreateProject.module.css"; // Ensure the CSS module is correctly referenced
+import styles from "./CreateProject.module.css";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Card from "../../../shared/card/Card";
 import { useAppContext } from "../../../context/ApiContext";
@@ -18,10 +18,9 @@ const CreateProject = () => {
   const { sendData, getProjectList } = useAppContext();
 
   // submit form
-  const submihHandle = (data) => {
-    console.log(data);
-    sendData(data);
-    getProjectList();
+  const submihHandle = async (data) => {
+    await sendData(data);
+    await getProjectList();
     reset();
   };
 

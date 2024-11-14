@@ -16,7 +16,7 @@ const ContextProvider = ({ children }) => {
   const getProjectList = async () => {
     setLoading(true);
     try {
-      const { data } = await httpService.get(`http://localhost:5001/projects`);
+      const { data } = await httpService.get(`/projects`);
       setTasks(data);
       setLoading(false);
     } catch (error) {
@@ -46,7 +46,6 @@ const ContextProvider = ({ children }) => {
           pending: "در حال حذف...",
           success: {
             render({ data }) {
-              console.log(data);
               if (data.status === 200) {
                 const filteredDelete = tasks.filter((item) => item.id !== id);
                 setTasks(filteredDelete);
@@ -72,12 +71,10 @@ const ContextProvider = ({ children }) => {
 
   // GET ProjectListById (project)
   const getProjectListById = async (id) => {
-    console.log(id);
     setLoading(true);
     try {
       const { data } = await httpService.get(`/projects/${id}`);
       setDetailsTask(data);
-      console.log(data);
       setLoading(false);
     } catch (error) {
       console.log(error);
@@ -86,8 +83,6 @@ const ContextProvider = ({ children }) => {
 
   // DELETE TASK
   const deletTask = async (projectId, taskId) => {
-    console.log(projectId, taskId);
-
     try {
       // حذف تسک مورد نظر از آرایه `tasks`
       const updatedTasks = detailsTask.tasks.filter(
@@ -139,7 +134,7 @@ const ContextProvider = ({ children }) => {
       if (response.status === 200) {
         toast.success("تسک با موفقیت ایجاد شد");
 
-        // بروزرسانی وضعیت  برای نمایش    
+        // بروزرسانی وضعیت  برای نمایش
         setDetailsTask((prevDetails) => ({
           ...prevDetails,
           tasks: updatedTasks,
@@ -154,7 +149,7 @@ const ContextProvider = ({ children }) => {
   // STATUS
   const updateTaskStatus = async (projectId, taskId, newStatus) => {
     try {
-      // به‌روزرسانی وضعیت تسک در آرایه 
+      // به‌روزرسانی وضعیت تسک در آرایه
       const updatedTasks = detailsTask.tasks.map((task) =>
         task.id === taskId ? { ...task, status: newStatus } : task
       );
@@ -167,7 +162,7 @@ const ContextProvider = ({ children }) => {
       );
 
       if (response.status === 200) {
-        // بروزرسانی وضعیت  برای نمایش 
+        // بروزرسانی وضعیت  برای نمایش
         setDetailsTask((prevDetails) => ({
           ...prevDetails,
           tasks: updatedTasks,

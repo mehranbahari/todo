@@ -2,8 +2,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./shared/header/Header";
 import Footer from "./shared/footer/Footer";
 import NotFound from "./shared/NotFound/NotFound";
-import ProjectList from "./components/logs/ProjectList/ProjectList";
-import DetailsProject from "./components/logs/Details-project/Details-Project";
+import ProjectList from "./components/project/ProjectList/ProjectList";
+import DetailsProject from "./components/project/Details-project/Details-Project";
 
 const App = () => {
   return (
