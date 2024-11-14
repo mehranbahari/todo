@@ -1,0 +1,123 @@
+.wrapDetails {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.wrapBadge {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.badge {
+  display: inline-block;
+  padding: 0.5em 2em;
+  border-radius: 1em;
+  background-color: #000;
+  color: #fff;
+  font-size: 0.75em;
+  margin: 0 20px;
+}
+.DetailText {
+  color: #646363;
+}
+
+.cardTask {
+  width: 100%;
+  align-items: flex-start !important;
+}
+.btnCreateTask {
+  border: none;
+  border: 1px solid #ccc;
+  background: #9858fd;
+  padding: 12px 30px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: 0.5s all;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.btnCreateTask:hover {
+  background-color: #fff;
+  color: #000;
+  border-color: #9858fd;
+}
+.wrapRadioBtn {
+  display: flex;
+  gap: 1rem;
+  @media (width <= 400px) {
+    flex-direction: column;
+  }
+}
+.radioBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  @media (width <= 400px) {
+    justify-content: center;
+  }
+}
+.wrapTaskDetails {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.detailsAuth {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
+.wrapIcons {
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.wrapIcons > button {
+  all: unset;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.DeleteTaskListbtn {
+  text-align: center !important;
+  width: 100% !important;
+  padding: 6px 0 !important;
+  background: darkgoldenrod !important;
+}
+.title_Delete {
+  font-weight: bold;
+  @media (width <= 480px) {
+    font-size: 14px;
+  }
+}
+.hr {
+  margin: 10px 0;
+}
+.wrap_modal_Btn {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin: 10px 0;
+}
+.deleteM {
+  background: #b8860c !important;
+}

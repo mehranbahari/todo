@@ -1,0 +1,86 @@
+.wrapperTaskList {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 50px 0;
+}
+.cardTaskList {
+  width: 32%;
+  min-height: 250px;
+  max-height: 250px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  @media (width <= 768px) {
+    width: 48%;
+    @media (width <= 480px) {
+      width: 100%;
+    }
+  }
+}
+.TaskListTitle {
+  width: 100%;
+  text-align: center;
+  background-color: #ccc;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  @media (width <= 480px) {
+    font-size: 17px;
+  }
+}
+.TaskListDes {
+  text-align: justify;
+  color: #575555;
+  padding: 10px 0;
+}
+.wrapperBtnTaskList {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  @media (width <= 480px) {
+    flex-direction: column;
+  }
+}
+.DetailsTaskListbtn {
+  text-align: center !important;
+  width: 100% !important;
+  padding: 6px 0 !important;
+}
+.DetailsTaskListbtn:hover {
+  background: #9858fd !important;
+}
+.DeleteTaskListbtn {
+  text-align: center !important;
+  width: 100% !important;
+  padding: 6px 0 !important;
+  background: darkgoldenrod !important;
+}
+.title_Delete {
+  font-weight: bold;
+  @media (width <= 480px) {
+    font-size: 14px;
+  }
+}
+.hr {
+  margin: 10px 0;
+}
+.wrap_modal_Btn {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin: 10px 0;
+}
+.deleteM {
+  background: #b8860c !important;
+}
