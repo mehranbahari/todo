@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useAppContext } from "../../../context/ApiContext";
 import styles from "./ProjectList.module.css";
 import { useNavigate } from "react-router-dom";
 import { CiTrash } from "react-icons/ci";
@@ -9,15 +8,15 @@ import BtnCreateProject from "../Btn-CreateProject/Btn-CreateProject";
 import Button from "../../../shared/Button/Button";
 import { motion } from "framer-motion";
 import Modal from "../../../shared/Modal/Modal";
+import useStore from "../../../../store/UseStore";
 
 const ProjectList = () => {
-  const { getProjectList, tasks, deleteProject, loading } = useAppContext();
+  const { getProjectList, tasks, deleteProject, loading } = useStore();
   const navigate = useNavigate();
 
   useEffect(() => {
     getProjectList();
   }, []);
-
 
   // MODAL DELETE PROJECT
   const [isShow, setIsShow] = useState(false);
@@ -75,11 +74,15 @@ const ProjectList = () => {
                 </Button>
 
                 <Modal status={isShow} setStatus={setIsShow}>
-                  <p className={styles.title_Delete}>آیا از حذف پروژه مطمن هستید؟</p>
+                  <p className={styles.title_Delete}>
+                    آیا از حذف پروژه مطمن هستید؟
+                  </p>
                   <hr className={styles.hr} />
                   <div className={styles.wrap_modal_Btn}>
                     <Button onClick={() => setIsShow(false)}>انصراف</Button>
-                    <Button className={styles.deleteM} onClick={confirmDelete}>حذف</Button>
+                    <Button className={styles.deleteM} onClick={confirmDelete}>
+                      حذف
+                    </Button>
                   </div>
                 </Modal>
               </div>

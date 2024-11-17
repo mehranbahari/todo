@@ -3,12 +3,12 @@ import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Card from "../../../shared/card/Card";
 import { CreateTaskVal } from "../../../validations/CreateTask";
-import { useAppContext } from "../../../context/ApiContext";
 import { useParams } from "react-router-dom";
 import Button from "../../../shared/Button/Button";
 import DatePicker from "react-multi-date-picker";
 import persian from "react-date-object/calendars/persian";
 import persian_fa from "react-date-object/locales/persian_fa";
+import useStore from "../../../../store/UseStore";
 
 const CreateTask = () => {
   const {
@@ -21,7 +21,7 @@ const CreateTask = () => {
     resolver: yupResolver(CreateTaskVal),
   });
 
-  const { createTaskSend } = useAppContext();
+  const { createTaskSend } = useStore();
   const { id } = useParams();
 
   // Submit form

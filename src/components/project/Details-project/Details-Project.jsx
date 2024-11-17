@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useAppContext } from "../../../context/ApiContext";
 import Spiner from "../../../shared/Spiner/Spiner";
 import styles from "./Details-Project.module.css";
 import Card from "../../../shared/card/Card";
@@ -8,6 +7,7 @@ import { FaTrash } from "react-icons/fa";
 import BtnCreateTask from "../../Tasks/BtnCreateTask/BtnCreateTask";
 import Button from "../../../shared/Button/Button";
 import Modal from "../../../shared/Modal/Modal";
+import useStore from "../../../../store/UseStore";
 
 const DetailsProject = () => {
   const { id } = useParams();
@@ -17,7 +17,7 @@ const DetailsProject = () => {
     detailsTask,
     deletTask,
     updateTaskStatus,
-  } = useAppContext();
+  } = useStore();
 
   useEffect(() => {
     getProjectListById(id);

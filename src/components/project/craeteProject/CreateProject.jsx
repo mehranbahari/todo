@@ -2,9 +2,9 @@ import { useForm } from "react-hook-form";
 import styles from "./CreateProject.module.css";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Card from "../../../shared/card/Card";
-import { useAppContext } from "../../../context/ApiContext";
 import Button from "../../../shared/Button/Button";
 import { CreateProjectVal } from "../../../validations/CreateProject";
+import useStore from "../../../../store/UseStore";
 
 const CreateProject = () => {
   const {
@@ -15,7 +15,8 @@ const CreateProject = () => {
   } = useForm({
     resolver: yupResolver(CreateProjectVal),
   });
-  const { sendData, getProjectList } = useAppContext();
+  // const { sendData, getProjectList } = useAppContext();
+  const { sendData, getProjectList } = useStore();
 
   // submit form
   const submihHandle = async (data) => {
